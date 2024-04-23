@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unclaimed Benefits</title>
+    <style>body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* White background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #800000; /* Brown header */
+            color: #fff; /* White text color */
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #800000; /* Brown navigation background */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff; /* White link color */
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #800000; /* Brown hover color */
+        }
+        footer {
+            background-color: #800000; /* Brown footer */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="job_finding.html">Job Finding</a></li>
+            <li><a href="product_search.html">Product Search</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Unclaimed Benefits</h2>
+        <input type="text" id="searchInput" class="search-bar" placeholder="Enter keyword...">
+        <button onclick="search()">Search</button>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+
+    <script>
+        // Function to handle search functionality
+        function search() {
+            // Get user input from search bar
+            var query = document.getElementById("searchInput").value.toLowerCase();
+
+            // Read the content of the text document (assuming the text is stored in a variable named 'text')
+            var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel justo et metus tempor bibendum. Duis tincidunt turpis a justo malesuada, id faucibus dui congue. Sed aliquam leo quis varius euismod. Nam rutrum tristique tortor, eget tincidunt enim. Phasellus id mi magna. Nulla vitae accumsan nulla. Ut in ex id velit aliquam tincidunt vitae nec leo. Vivamus feugiat, metus vitae facilisis fringilla, eros lectus volutpat justo, id laoreet nulla lacus ac ipsum. Vestibulum varius sagittis erat, et convallis lorem aliquet vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
+
+            // Check if query is found in the text document
+            if (text.toLowerCase().includes(query)) {
+                alert("Match found!");
+            } else {
+                alert("No match found!");
+            }
+        }
+    </script>
+</body>
+</html>
