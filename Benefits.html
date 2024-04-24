@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unclaimed Benefits</title>
-    <style>body {
+<style>body {
             font-family: Arial, sans-serif;
             background-color: #fff; /* White background */
             color: #333; /* Dark text color */
@@ -63,12 +63,16 @@
             <li><a href="product_search.html">Product Search</a></li>
         </ul>
     </nav>
-    <center><div class="container">
-        <h2>Unclaimed Benefits Search</h2>
-        <input type="text" id="searchInput" class="search-bar" placeholder="ID/Surname&DOB">
-        <button onclick="search()">Search</button>
-    </div></center>
-    <center><p> Welcome to our Unclaimed Benefits Search Tool. Use the search bar above to inquire if any unclaimed benefits are associated with your name. Should our database yield no matches, rest assured that our team is available to offer further assistance in expanding the scope of your search. If our system identifies benefits in your name, please reach out to our administrator for personalized guidance on the steps required to initiate a claim. We are committed to facilitating the retrieval of any unclaimed funds or benefits rightfully belonging to you.</p></center>
+    <center>
+        <div class="container">
+            <h2>Unclaimed Benefits Search</h2>
+            <input type="text" id="searchInput" class="search-bar" placeholder="Enter a word">
+            <button onclick="search()">Search</button>
+        </div>
+    </center>
+    <center>
+        <p> Welcome to our Unclaimed Benefits Search Tool. Use the search bar above to inquire if any unclaimed benefits are associated with your name. Should our database yield no matches, rest assured that our team is available to offer further assistance in expanding the scope of your search. If our system identifies benefits in your name, please reach out to our administrator for personalized guidance on the steps required to initiate a claim. We are committed to facilitating the retrieval of any unclaimed funds or benefits rightfully belonging to you.</p>
+    </center>
     <footer>
         <p>&copy; 2024 SetsingEscrow</p>
     </footer>
@@ -79,15 +83,20 @@
             // Get user input from search bar
             var query = document.getElementById("searchInput").value.toLowerCase();
 
-                        // Read the content of the text document (assuming the text is stored in a variable named 'text')
-		var text= " Paul Wall";
-
-            // Check if query is found in the text document
-            if (text.toLowerCase().includes(query)) {
-                alert("Unclaimed Benefits Found!");
-            } else {
-                alert("Sorry no match found!");
-            }
+            // Read the content of the text document
+            fetch('database1.txt')
+                .then(response => response.text())
+                .then(data => {
+                    // Check if query is found in the text document
+                    if (data.toLowerCase().includes(query)) {
+                        alert("Word found in the database!");
+                    } else {
+                        alert("Word not found in the database!");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error reading the file:', error);
+                });
         }
     </script>
 </body>
