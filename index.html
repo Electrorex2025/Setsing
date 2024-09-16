@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Agencys</title>
+    <style>
+        /* Styles from previous example */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* White background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #800000; /* Brown header */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+        }
+        footer {
+            background-color: #800000; /* Brown footer */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+        /* New styles for subscription form */
+        .subscription-form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            background-color: #800000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Setsing Escrow</h1>
+    </header>
+    <div class="subscription-form">
+        <h2>Find Vacancies</h2>
+        <p>Please fill out the form below to apply to our agency.</p>
+        <form action="submit_form.php" method="post">
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City of Residence</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="job_title">Desired Job Title/Position</label>
+                <input type="text" id="job_title" name="job_title" required>
+            </div>
+            <div class="form-group">
+                <label for="employment_type">Preferred Employment Type</label>
+                <select id="employment_type" name="employment_type" required>
+                    <option value="full-time">Full-time</option>
+                    <option value="part-time">Part-time</option>
+                    <option value="temporary">Temporary</option>
+                    <option value="contract">Contract</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="work_location">Preferred Work Location</label>
+                <input type="text" id="work_location" name="work_location" required>
+            </div>
+            <div class="form-group">
+                <label for="education">Highest Level of Education</label>
+                <select id="education" name="education" required>
+                    <option value="high_school">High School</option>
+                    <option value="associate">Associate Degree</option>
+                    <option value="bachelor">Bachelor’s Degree</option>
+                    <option value="master">Master’s Degree</option>
+                    <option value="doctorate">Doctorate</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="field_of_study">Field of Study</label>
+                <input type="text" id="field_of_study" name="field_of_study" required>
+            </div>
+            <div class="form-group">
+                <label for="certifications">Relevant Certifications or Licenses</label>
+                <input type="text" id="certifications" name="certifications">
+            </div>
+            <div class="form-group">
+                <label for="experience">Total Years of Experience</label>
+                <input type="number" id="experience" name="experience" required>
+            </div>
+            <div class="form-group">
+                <label for="previous_jobs">Previous Job Titles</label>
+                <input type="text" id="previous_jobs" name="previous_jobs">
+            </div>
+            <div class="form-group">
+                <label for="skills">Key Skills and Competencies</label>
+                <input type="text" id="skills" name="skills">
+            </div>
+            <div class="form-group">
+                <label for="availability">Availability to Start</label>
+                <select id="availability" name="availability" required>
+                    <option value="immediate">Immediate</option>
+                    <option value="1-2_weeks">1-2 Weeks</option>
+                    <option value="1_month">1 Month</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary Expectations</label>
+                <input type="text" id="salary" name="salary" required>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required> I agree to the Terms and Conditions
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="consent" required> I consent to receive communications from Setsing Escrow
+                </label>
+            </div>
+            <button type="submit" class="submit-button">Subscribe</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 SetsingEscrow</p>
+    </footer>
+</body>
+</html>
+
