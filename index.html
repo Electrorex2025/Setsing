@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries with RomaNna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* White background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #800000; /* Brown header */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #800000; /* Brown navigation background */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff; /* White link color */
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #800000; /* Brown hover color */
+        }
+        .slideshow-container {
+            max-width: 500px; /* Set max width for slideshow container */
+            margin: auto; /* Center align the container */
+            overflow: hidden; /* Hide overflow */
+        }
+        .product {
+            display: none; /* Hide products by default */
+            text-align: center;
+        }
+        .product img {
+            width: 100%; /* Ensure images take full width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Add border radius */
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1; /* Ensure images are square */
+            object-fit: cover; /* Ensure image covers the entire area */
+            border-radius: 10px; /* Add border radius */
+        }
+        footer {
+            background-color: #800000; /* Brown footer */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Buy Groceries</h1>
+
+    <nav>
+        <ul>
+            <li><a href="https://setsing.online/Store">Home</a></li>
+            <li><a href="https://Setsing.online/Services">Services</a></li>
+        </ul>
+    </nav>
+    <br></header>
+    <h3>Click Below To make a list</h3><br>
+    <div class="slideshow-container">
+        <div class="product mySlides">
+            <a href="romanna.html">
+                <img src="https://setsing.online/Pictures/Roma1.jpg" alt="Item 1">
+                <h2>Buy Grocery</h2>
+            </a>
+        </div>
+        <div class="product mySlides">
+            <a href="romanna.html">
+                <img src="https://setsing.online/Pictures/Roma3.jpg" alt="Item 2">
+                <h2>Buy Grocery</h2>
+            </a>
+        </div>
+        <div class="product mySlides">
+            <a href="romanna.html">
+                <img src="https://setsing.online/Pictures/Roma6.jpg" alt="Item 3">
+                <h2>Buy Grocery</h2>
+            </a>
+        </div>
+    </div><br>
+    <footer>
+        <p>&copy; 2024 SetsingEscrow</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 5000); // Change image every 9 seconds
+        }
+    </script>
+</body>
+</html>
