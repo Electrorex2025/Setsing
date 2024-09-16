@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastFoods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* White background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #800000; /* Brown header */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #800000; /* Brown navigation background */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff; /* White link color */
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #800000; /* Brown hover color */
+        }
+        .slideshow-container {
+            max-width: 500px; /* Set max width for slideshow container */
+            margin: auto; /* Center align the container */
+            position: relative; /* Position relative to contain absolute elements */
+        }
+        .product {
+            display: none; /* Hide products by default */
+            text-align: center;
+        }
+        .product img {
+            width: 100%; /* Set width to 100% */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Add border radius */
+            aspect-ratio: 1; /* Make images square */
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        footer {
+            background-color: #800000; /* Brown footer */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fast Foods</h1>
+        <nav>
+            <ul>
+                <li><a href="https://setsing.online/Store">Home</a></li>
+                <li><a href="https://Setsing.online/Services">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h3>Click Food to Buy</h3>
+    <br>
+    <div class="slideshow-container">
+        <div class="product mySlides">
+            <a href="YOUR_PAYMENT_LINK_FOR_ITEM_1">
+                <img src="https://setsing.online/Pictures/SkhambaneEsw.png" alt="Food Item 1">
+                <h2>Delicious Skhambane</h2>
+            </a>
+        </div>
+        <div class="product mySlides">
+            <a href="YOUR_PAYMENT_LINK_FOR_ITEM_2">
+                <img src="https://setsing.online/Pictures/BeefBurger.jpg" alt="Food Item 2">
+                <h2>Beef Burger and Chips</h2>
+            </a>
+        </div>
+        <div class="product mySlides">
+            <a href="YOUR_PAYMENT_LINK_FOR_ITEM_3">
+                <img src="https://setsing.online/Pictures/Dagwood.png" alt="Food Item 3">
+                <h2>Dagwood and Chips</h2>
+            </a>
+        </div>
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <footer>
+        <p>&copy; 2024 SetsingEscrow</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
