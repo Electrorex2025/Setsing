@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Assistance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* White background */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #800000; /* Brown header */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #800000; /* Brown navigation background */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff; /* White link color */
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #800000; /* Brown hover color */
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #800000;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .form-container h2 {
+            text-align: center;
+            color: #800000;
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #800000;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #800000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #333;
+        }
+        footer {
+            background-color: #800000; /* Brown footer */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Task Assistance</h1>
+        <nav>
+            <ul>
+                <li><a href="https://setsing.online/Store">Home</a></li>
+                <li><a href="https://Setsing.online/Services">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="form-container">
+        <h2>Request Assistance</h2>
+        <form action="save_request.php" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="contact">Contact Details:</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label for="description">Task Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div><br><br>
+    <footer>
+        <p>&copy; 2024 SetsingEscrow</p>
+    </footer>
+</body>
+</html>
