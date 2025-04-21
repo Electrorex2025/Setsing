@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unclaimed Benefits</title>
-<style>body {
+    <style>
+        body {
             font-family: Arial, sans-serif;
-            background-color: #fff; /* White background */
-            color: #333; /* Dark text color */
+            background-color: #fff;
+            color: #333;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #800000; /* Brown header */
-            color: #fff; /* White text color */
+            background-color: #800000;
+            color: #fff;
             padding: 20px;
             text-align: center;
         }
         nav {
-            background-color: #800000; /* Brown navigation background */
+            background-color: #800000;
             padding: 10px 0;
             text-align: center;
         }
@@ -32,15 +33,18 @@
             margin-right: 20px;
         }
         nav ul li a {
-            color: #fff; /* White link color */
+            color: #fff;
             text-decoration: none;
         }
         nav ul li a:hover {
-            color: #800000; /* Brown hover color */
+            color: #800000;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
         }
         footer {
-            background-color: #800000; /* Brown footer */
-            color: #fff; /* White text color */
+            background-color: #800000;
+            color: #fff;
             padding: 10px;
             text-align: center;
             position: fixed;
@@ -49,6 +53,42 @@
         }
         footer p {
             margin: 0;
+        }
+        .container {
+            margin: 30px auto;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+        .search-bar {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+            border: 1px solid #800000;
+            border-radius: 4px;
+        }
+        .check-now-btn {
+            padding: 10px 20px;
+            background-color: #800000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .check-now-btn:hover {
+            background-color: #600000;
+        }
+        .service-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .info-text {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -63,42 +103,20 @@
             <li><a href="https://setsing-git-advertising-setsings-projects.vercel.app/">Advertise</a></li>	
         </ul>
     </nav>
-    <center>
-        <img src="https://raw.githubusercontent.com/Electrorex2025/Setsing/refs/heads/Pictures/Unclaimed.jpeg" alt="Our Job Agency" class="service-image" height="1" width="1"><br>
-        <div class="container">
-            <h2> Find Unclaimed Benefits </h2>
-            <input type="text" id="searchInput" class="search-bar" placeholder="Enter ID or Full Names">
-            <button onclick="search()">Search</button>
-        </div>
-    </center>
-    <center>
-        <p> Welcome to our Unclaimed Benefits Search Tool. Use the search bar above to inquire if any unclaimed benefits are associated with your name. Should our database yield no matches, rest assured that our team is available to offer further assistance in expanding the scope of your search. If our system identifies benefits in your name, please reach out to our administrator for personalized guidance on the steps required to initiate a claim. We are committed to facilitating the retrieval of any unclaimed funds or benefits rightfully belonging to you.</p>
-    </center>
+    
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/Electrorex2025/Setsing/refs/heads/Pictures/Unclaimed.jpeg" alt="Unclaimed Benefits" class="service-image">
+        <h2>Find Unclaimed Benefits</h2>
+        <input type="text" id="searchInput" class="search-bar" placeholder="Enter ID or Full Names">
+        <a href="your-php-page.php" class="check-now-btn">Check Now</a>
+    </div>
+    
+    <div class="info-text">
+        <p>Welcome to our Unclaimed Benefits Search Tool. Use the search bar above to inquire if any unclaimed benefits are associated with your name. Should our database yield no matches, rest assured that our team is available to offer further assistance in expanding the scope of your search. If our system identifies benefits in your name, please reach out to our administrator for personalized guidance on the steps required to initiate a claim. We are committed to facilitating the retrieval of any unclaimed funds or benefits rightfully belonging to you.</p>
+    </div>
+    
     <footer>
         <p>&copy; 2024 SetsingEscrow</p>
     </footer>
-
-    <script>
-        // Function to handle search functionality
-        function search() {
-            // Get user input from search bar
-            var query = document.getElementById("searchInput").value.toLowerCase();
-
-            // Read the content of the text document
-            fetch('database1.txt')
-                .then(response => response.text())
-                .then(data => {
-                    // Check if query is found in the text document
-                    if (data.toLowerCase().includes(query)) {
-                        alert("You might have unclaimed Funds!");
-                    } else {
-                        alert("Sorry, no unclaimed benefits found!");
-                    }
-                })
-                .catch(error => {
-                    console.error('Error reading the file:', error);
-                });
-        }
-    </script>
 </body>
 </html>
