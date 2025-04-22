@@ -1,90 +1,235 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Improved charset declaration -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setsing Escrow</title>
+    
+    <!-- Enhanced viewport for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>Setsing Escrow </title>
+    <meta name="description" content="Trusted escrow services and entertainment in Qwaqwa">
+    <meta name="keywords" content="escrow, marketplace, secure payments, Qwaqwa, games">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- CSS Variables for theming -->
     <style>
+        :root {
+            --primary: #800000;
+            --secondary: #000000;
+            --text-light: #ffffff;
+            --hover-opacity: 0.8;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000000; /* White background */
-            color: #333; /* Dark text color */
+            font-family: 'Arial', sans-serif;
+            background-color: var(--secondary);
+            color: var(--text-light);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
+        
         header {
-            background-color: #800000; /* Brown header */
-            color: #fff; /* White text color */
-            padding: 10px;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 15px 10px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        
         nav {
-            background-color: #800000; /* Brown navigation background */
-            padding: 10px 0;
+            background-color: var(--primary);
+            padding: 12px 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
+        
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
         }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
+        
         nav ul li a {
-            color: #fff; /* White link color */
+            color: var(--text-light);
             text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
+        
         nav ul li a:hover {
-            color: #800000; /* Brown hover color */
+            opacity: var(--hover-opacity);
+            background-color: rgba(255,255,255,0.1);
         }
-	        
-        footer {
-            background-color: #800000; /* Brown footer */
-            color: #fff; /* White text color */
-            padding: 10px;
+        
+        .main-content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - 200px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .marketplace-image, .game-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border: 3px solid var(--primary);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        .marketplace-image:hover, .game-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .image-label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        
+        .social-links {
             text-align: center;
-            position: fixed;
+            margin: 30px 0;
+            grid-column: span 2;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+        
+        .social-links img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 15px 10px;
+            text-align: center;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
-        footer p {
-            margin: 0;
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                grid-column: span 1;
+            }
         }
     </style>
-</head>
-<body>
-    <header>
-        <h1>  </h1>
-    </header>
-    <nav>
-        <ul>
-	    <li><a href="https://setsing-git-services-setsings-projects.vercel.app">Services</a></li>	
-            <li><a href="https://setsing-git-store-setsings-projects.vercel.app">Buy Online</a></li>
-        </ul><br>
-    </nav>
-	<div class="options">
-		    <style>
-        /* CSS Styles */
-        /* Your existing CSS styles */
-        .options img {
-            width: 380px; /* Set the width of the image */
-            height: auto; /* Maintain the aspect ratio */
-        }
-    </style>
-        <!-- Image links for each option -->
-        <center><a href="Products&amp;Services.html"><img src="Maluti Cresent Capture.JPG" alt="Shop Items"></a></center><br>
-    </div>
     
-  <center>
-        <a href="https://www.instagram.com/setsingescrow/"><img src="https://github.com/Electrorex2025/Electrorex/blob/Pictures/instagram-icon-971.jpg?raw=true" alt="Instagram icon" width="35"></a>
-        <a href="https://www.facebook.com/setsingescrow"><img src="https://github.com/Electrorex2025/Electrorex/blob/Pictures/facebook-logo-png-4.png?raw=true" alt="Facebook Logo HD PNG Pic" width="35"></a>
- </center>    
+    <!-- Preload important resources -->
+    <link rel="preload" href="Maluti-Cresent-Capture.webp" as="image">
+    
+</head>
 
-<br><br>
+<body>
+    <!-- Semantic header with proper heading hierarchy -->
+
+    
+    <!-- Improved navigation with aria-label -->
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="https://setsing-git-services-setsings-projects.vercel.app" aria-label="Our Services">Services</a></li>
+            <li><a href="https://setsing-git-store-setsings-projects.vercel.app" aria-label="Online Store">Buy Online</a></li>
+            <li><a href="https://setsing.shop/prizehub/" aria-label="PrizeHub">PrizeHub Game</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main content section with proper semantic markup -->
+    <main class="main-content">
+        <!-- Marketplace Image -->
+        <div class="image-container">
+            <a href="https://www.facebook.com/groups/2369041193369822">
+                <img src="Maluti-Cresent-Capture.webp" 
+                     alt="Setsing Escrow Marketplace at Maluti Crescent" 
+                     class="marketplace-image"
+                     width="400"
+                     height="300">
+            </a>
+            <span class="image-label">Setsing Escrow</span>
+        </div>
+        
+        <!-- Game Image -->
+
+        <p>🤝Your reliable provider in the deals.</br>🤝 Where buying items is easier </br> and trust is always first.💯</p>
+        
+        <!-- Social links with proper spacing and semantics -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/setsingescrow/" aria-label="Instagram">
+                <img src="img/instagram-icon.webp" 
+                     alt="Instagram" 
+                     width="48" 
+                     height="48"
+                     loading="lazy">
+            </a>
+            <a href="https://www.facebook.com/setsingescrow" aria-label="Facebook">
+                <img src="img/facebook-icon.webp" 
+                     alt="Facebook" 
+                     width="48" 
+                     height="48"
+                     loading="lazy">
+            </a>
+        </div>
+    </main>
+    
+    <!-- Footer with copyright and year update -->
     <footer>
-	    
-        <p>© 2025 SetsingEscrow</p>
+        <p>&copy; <span id="current-year">2025</span> Setsing Escrow. All rights reserved.</p>
     </footer>
-
-
-</body></html>
+    
+    <!-- Small JS for dynamic year and analytics -->
+    <script>
+        // Auto-update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Simple analytics (replace with your actual GA code)
+        window.addEventListener('load', function() {
+            console.log('Page loaded - Analytics would fire here');
+        });
+    </script>
+</body>
+</html>
