@@ -3,122 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groceries with RomaNna</title>
+    <title>Roma Nna Order</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff; /* White background */
-            color: #333; /* Dark text color */
+            background-color: #fff;
+            color: #333;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
         header {
-            background-color: #800000; /* Brown header */
-            color: #fff; /* White text color */
+            background-color: #800000;
+            color: #fff;
             padding: 10px;
             text-align: center;
+            border-radius: 5px 5px 0 0;
         }
-        nav {
-            background-color: #800000; /* Brown navigation background */
-            padding: 10px 0;
-            text-align: center;
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #800000;
+            border-radius: 0 0 5px 5px;
+            background-color: #fff;
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: #fff; /* White link color */
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            color: #800000; /* Brown hover color */
-        }
-        .slideshow-container {
-            max-width: 500px; /* Set max width for slideshow container */
-            margin: auto; /* Center align the container */
-            overflow: hidden; /* Hide overflow */
-        }
-        .product {
-            display: none; /* Hide products by default */
-            text-align: center;
-        }
-        .product img {
-            width: 100%; /* Ensure images take full width */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 10px; /* Add border radius */
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1/1; /* Ensure images are square */
-            object-fit: cover; /* Ensure image covers the entire area */
-            border-radius: 10px; /* Add border radius */
-        }
-        footer {
-            background-color: #800000; /* Brown footer */
-            color: #fff; /* White text color */
+        .delivery-notice {
+            background-color: #f8f8f8;
             padding: 10px;
-            text-align: center;
+            border-left: 4px solid #800000;
+            margin-bottom: 20px;
+        }
+        .item-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        .item-row input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .item-name {
+            flex: 2;
+        }
+        .item-price {
+            flex: 1;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        .add-btn {
+            background-color: #800000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .remove-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        .total-section {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 2px dashed #800000;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Buy Groceries</h1>
+        <h1>Roma Nna</h1>
+    </header>
+    <div class="form-container">
+        <div class="delivery-notice">
+            <p>Delivery will be charged based on destination.</p>
+        </div>
 
-    <nav>
-        <ul>
-            <li><a href="https://setsing.vercel.app/">Home</a></li>
-            <li><a href="https://setsing-git-services-setsings-projects.vercel.app/">Services</a></li>
-        </ul>
-    </nav>
-    <br></header>
-    <h3>Click Below To make a list</h3><br>
-    <div class="slideshow-container">
-        <div class="product mySlides">
-            <a href="https://setsing-git-setsingerr-setsings-projects.vercel.app/">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Roma1.jpg?raw=true" alt="Item 1">
-                <h2>Buy Grocery</h2>
-            </a>
-        </div>
-        <div class="product mySlides">
-            <a href="https://setsing-git-setsingerr-setsings-projects.vercel.app/">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Roma3.jpg?raw=true" alt="Item 2">
-                <h2>Buy Grocery</h2>
-            </a>
-        </div>
-        <div class="product mySlides">
-            <a href="https://setsing-git-setsingerr-setsings-projects.vercel.app/">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Roma6.jpg?raw=true" alt="Item 3">
-                <h2>Buy Grocery</h2>
-            </a>
-        </div>
-    </div><br>
-    <footer>
-        <p>&copy; 2025 SetsingEscrow</p>
-    </footer>
+        <form id="orderForm">
+            <div id="itemsContainer">
+                <!-- Default items -->
+                <div class="item-row">
+                    <input type="text" class="item-name" placeholder="Item 1" required>
+                    <input type="number" class="item-price" placeholder="Price" min="0" step="0.01" required>
+                    <button type="button" class="remove-btn" onclick="removeItem(this)">Remove</button>
+                </div>
+                <div class="item-row">
+                    <input type="text" class="item-name" placeholder="Item 2" required>
+                    <input type="number" class="item-price" placeholder="Price" min="0" step="0.01" required>
+                    <button type="button" class="remove-btn" onclick="removeItem(this)">Remove</button>
+                </div>
+                <div class="item-row">
+                    <input type="text" class="item-name" placeholder="Item 3" required>
+                    <input type="number" class="item-price" placeholder="Price" min="0" step="0.01" required>
+                    <button type="button" class="remove-btn" onclick="removeItem(this)">Remove</button>
+                </div>
+            </div>
+
+            <button type="button" class="add-btn" onclick="addItem()">+ Add More Items</button>
+
+            <div class="total-section">
+                Total: R<span id="totalPrice">0.00</span>
+            </div>
+
+            <button type="submit" style="background-color: #800000; color: white; width: 100%; padding: 10px; border: none; border-radius: 4px;">
+                Submit Order
+            </button>
+        </form>
+    </div>
 
     <script>
-        let slideIndex = 0;
-        showSlides();
+        let itemCount = 3; // Start counting from Item4
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 5000); // Change image every 9 seconds
+        // Add new item row
+        function addItem() {
+            itemCount++;
+            const container = document.getElementById('itemsContainer');
+            const newRow = document.createElement('div');
+            newRow.className = 'item-row';
+            newRow.innerHTML = `
+                <input type="text" class="item-name" placeholder="Item ${itemCount}" required>
+                <input type="number" class="item-price" placeholder="Price" min="0" step="0.01" required>
+                <button type="button" class="remove-btn" onclick="removeItem(this)">Remove</button>
+            `;
+            container.appendChild(newRow);
+            attachPriceListeners(); // Update total when new items are added
         }
+
+        // Remove item row
+        function removeItem(button) {
+            if (document.querySelectorAll('.item-row').length > 1) {
+                button.parentElement.remove();
+                calculateTotal();
+            } else {
+                alert("At least one item is required!");
+            }
+        }
+
+        // Calculate total price
+        function calculateTotal() {
+            let total = 0;
+            document.querySelectorAll('.item-price').forEach(input => {
+                total += parseFloat(input.value) || 0;
+            });
+            document.getElementById('totalPrice').textContent = total.toFixed(2);
+        }
+
+        // Attach event listeners to price inputs
+        function attachPriceListeners() {
+            document.querySelectorAll('.item-price').forEach(input => {
+                input.addEventListener('input', calculateTotal);
+            });
+        }
+
+        // Initialize
+        attachPriceListeners();
+        calculateTotal();
+
+        // Submit to WhatsApp (optional)
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let message = "Roma Nna Order:\n\n";
+            
+            document.querySelectorAll('.item-row').forEach(row => {
+                const name = row.querySelector('.item-name').value || "Unnamed Item";
+                const price = parseFloat(row.querySelector('.item-price').value) || 0;
+                message += `- ${name}: R${price.toFixed(2)}\n`;
+            });
+            
+            message += `\nTOTAL: R${document.getElementById('totalPrice').textContent}`;
+            
+            window.open(`https://wa.me/27608708889?text=${encodeURIComponent(message)}`, '_blank');
+        });
     </script>
 </body>
 </html>
