@@ -60,6 +60,7 @@
             display: flex;
             gap: 10px;
             margin-bottom: 10px;
+            align-items: center;
         }
         .item-row select {
             flex: 3;
@@ -97,6 +98,29 @@
             margin-right: 10px;
             font-size: 20px;
         }
+        .add-item-btn {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .add-item-btn:hover {
+            background-color: #600000;
+        }
+        .remove-item-btn {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .remove-item-btn:hover {
+            background-color: #cc0000;
+        }
     </style>
 </head>
 <body>
@@ -123,45 +147,28 @@
 
             <h3>Select Your Items:</h3>
             
-            <!-- Item 1 -->
-            <div class="item-row">
-                <select class="food-item" id="item1" onchange="calculateTotal()">
-                    <option value="0">-- Select item --</option>
-                    <option value="60">Beef stew - R60</option>
-                    <option value="45">Chicken curry - R45</option>
-                    <option value="50">Grilled chicken - R50</option>
-                    <option value="50">Grilled Beef - R50</option>
-                    <option value="45">Grilled pork - R45</option>
-                    <option value="40">Cooked Turkey - R40</option>
-                    <option value="35">Ox liver - R35</option>
-                    <option value="50">Nama ya hlooho ya kgomo - R50</option>
-                    <option value="40">Grilled Pork - R40</option>
-                    <option value="40">Tlhakwana ya kgomo - R40</option>
-                    <option value="40">Pork trotters with moroho, chakalaka and pap - R40</option>
-                </select>
-                <input type="number" min="1" value="1" class="quantity" id="qty1" onchange="calculateTotal()">
-            </div>
-
-            <!-- Item 2 -->
-            <div class="item-row">
-                <select class="food-item" id="item2" onchange="calculateTotal()">
-                    <option value="0">-- Select item --</option>
-                    <option value="60">Beef stew - R60</option>
-                    <option value="45">Chicken curry - R45</option>
-                    <!-- Same options as above -->
-                </select>
-                <input type="number" min="1" value="1" class="quantity" id="qty2" onchange="calculateTotal()">
-            </div>
-
-            <!-- Item 3 -->
-            <div class="item-row">
-                <select class="food-item" id="item3" onchange="calculateTotal()">
-                    <option value="0">-- Select item --</option>
-                    <option value="60">Beef stew - R60</option>
-                    <option value="45">Chicken curry - R45</option>
-                    <!-- Same options as above -->
-                </select>
-                <input type="number" min="1" value="1" class="quantity" id="qty3" onchange="calculateTotal()">
+            <button type="button" class="add-item-btn" onclick="addItemRow()">+ Add Another Item</button>
+            
+            <div id="items-container">
+                <!-- Initial item row -->
+                <div class="item-row" id="item-row-1">
+                    <select class="food-item" onchange="calculateTotal()">
+                        <option value="0">-- Select item --</option>
+                        <option value="60">Beef stew - R60</option>
+                        <option value="45">Chicken curry - R45</option>
+                        <option value="50">Grilled chicken - R50</option>
+                        <option value="50">Grilled Beef - R50</option>
+                        <option value="45">Grilled pork - R45</option>
+                        <option value="40">Cooked Turkey - R40</option>
+                        <option value="35">Ox liver - R35</option>
+                        <option value="50">Nama ya hlooho ya kgomo - R50</option>
+                        <option value="40">Grilled Pork - R40</option>
+                        <option value="40">Tlhakwana ya kgomo - R40</option>
+                        <option value="40">Pork trotters with moroho, chakalaka and pap - R40</option>
+                    </select>
+                    <input type="number" min="1" value="1" class="quantity" onchange="calculateTotal()">
+                    <button type="button" class="remove-item-btn" onclick="removeItemRow(1)">×</button>
+                </div>
             </div>
 
             <div class="total-section">
@@ -175,15 +182,57 @@
     </div>
 
     <script>
+        let itemCounter = 1;
+        
+        function addItemRow() {
+            itemCounter++;
+            const newItemRow = document.createElement('div');
+            newItemRow.className = 'item-row';
+            newItemRow.id = `item-row-${itemCounter}`;
+            newItemRow.innerHTML = `
+                <select class="food-item" onchange="calculateTotal()">
+                    <option value="0">-- Select item --</option>
+                    <option value="60">Beef stew - R60</option>
+                    <option value="45">Chicken curry - R45</option>
+                    <option value="50">Grilled chicken - R50</option>
+                    <option value="50">Grilled Beef - R50</option>
+                    <option value="45">Grilled pork - R45</option>
+                    <option value="40">Cooked Turkey - R40</option>
+                    <option value="35">Ox liver - R35</option>
+                    <option value="50">Nama ya hlooho ya kgomo - R50</option>
+                    <option value="40">Grilled Pork - R40</option>
+                    <option value="40">Tlhakwana ya kgomo - R40</option>
+                    <option value="40">Pork trotters with moroho, chakalaka and pap - R40</option>
+                </select>
+                <input type="number" min="1" value="1" class="quantity" onchange="calculateTotal()">
+                <button type="button" class="remove-item-btn" onclick="removeItemRow(${itemCounter})">×</button>
+            `;
+            document.getElementById('items-container').appendChild(newItemRow);
+        }
+        
+        function removeItemRow(rowId) {
+            const rowToRemove = document.getElementById(`item-row-${rowId}`);
+            if (rowToRemove) {
+                rowToRemove.remove();
+                calculateTotal();
+            }
+        }
+
         function calculateTotal() {
             let total = 0;
-            for (let i = 1; i <= 3; i++) {
-                const item = document.getElementById(`item${i}`);
-                const qty = document.getElementById(`qty${i}`);
-                if (item && qty) {
-                    total += parseFloat(item.value) * parseInt(qty.value);
+            const itemRows = document.querySelectorAll('.item-row');
+            
+            itemRows.forEach(row => {
+                const itemSelect = row.querySelector('.food-item');
+                const quantityInput = row.querySelector('.quantity');
+                
+                if (itemSelect && quantityInput) {
+                    const price = parseFloat(itemSelect.value);
+                    const quantity = parseInt(quantityInput.value);
+                    total += price * quantity;
                 }
-            }
+            });
+            
             document.getElementById('totalAmount').textContent = total.toFixed(2);
         }
 
@@ -197,13 +246,16 @@
             }
 
             let orderItems = [];
-            for (let i = 1; i <= 3; i++) {
-                const item = document.getElementById(`item${i}`);
-                const qty = document.getElementById(`qty${i}`);
-                if (item.value !== "0") {
-                    orderItems.push(`${qty.value}x ${item.options[item.selectedIndex].text}`);
+            const itemRows = document.querySelectorAll('.item-row');
+            
+            itemRows.forEach(row => {
+                const itemSelect = row.querySelector('.food-item');
+                const quantityInput = row.querySelector('.quantity');
+                
+                if (itemSelect.value !== "0") {
+                    orderItems.push(`${quantityInput.value}x ${itemSelect.options[itemSelect.selectedIndex].text}`);
                 }
-            }
+            });
 
             if (orderItems.length === 0) {
                 alert("Please select at least one item");
