@@ -39,26 +39,21 @@
         nav ul li a:hover {
             color: #800000;
         }
-        .store-tabs {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
+        .kitchen {
+            margin: 30px auto;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .store-tab {
-            padding: 10px 20px;
-            background-color: #800000;
-            color: white;
-            cursor: pointer;
-            margin: 0 10px;
-            border-radius: 5px;
-        }
-        .store-tab.active {
-            background-color: #600000;
+        .kitchen h2 {
+            text-align: center;
+            color: #800000;
         }
         .slideshow-container {
-            max-width: 500px;
-            margin: auto;
             position: relative;
+            margin: auto;
         }
         .product {
             display: none;
@@ -111,107 +106,97 @@
         </nav>
     </header>
 
-    <div class="store-tabs">
-        <div class="store-tab active" onclick="openStore('ko-dijon')">Ko Dijon</div>
-        <div class="store-tab" onclick="openStore('thandys-kitchen')">Thandy's Kitchen</div>
+    <h3 style="text-align: center;">Choose a Kitchen</h3>
+
+    <!-- Ko Dijon Kitchen -->
+    <div class="kitchen">
+        <h2>Ko Dijon</h2>
+        <div class="slideshow-container">
+            <div class="product mySlides">
+                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Beef Stew">
+                    <h3>Beef Stew - R60</h3>
+                </a>
+            </div>
+            <div class="product mySlides">
+                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Grilled Beef">
+                    <h3>Grilled Beef - R50</h3>
+                </a>
+            </div>
+            <div class="product mySlides">
+                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Ox Liver">
+                    <h3>Ox Liver - R35</h3>
+                </a>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, this.parentNode)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, this.parentNode)">&#10095;</a>
+        </div>
     </div>
 
-    <h3>Click Food to Buy</h3>
-    <br>
-
-    <!-- Ko Dijon Store Slides -->
-    <div id="ko-dijon" class="slideshow-container store-content" style="display:block;">
-        <div class="product mySlides">
-            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Beef Stew">
-                <h2>Beef Stew - R60</h2>
-            </a>
+    <!-- Thandy's Kitchen -->
+    <div class="kitchen">
+        <h2>Thandy's Kitchen</h2>
+        <div class="slideshow-container">
+            <div class="product mySlides">
+                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Pork">
+                    <h3>Pork - R140</h3>
+                </a>
+            </div>
+            <div class="product mySlides">
+                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Small Chips">
+                    <h3>Small Chips - R15</h3>
+                </a>
+            </div>
+            <div class="product mySlides">
+                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Large Chips">
+                    <h3>Large Chips - R30</h3>
+                </a>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, this.parentNode)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, this.parentNode)">&#10095;</a>
         </div>
-        <div class="product mySlides">
-            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Grilled Beef">
-                <h2>Grilled Beef - R50</h2>
-            </a>
-        </div>
-        <div class="product mySlides">
-            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Ox Liver">
-                <h2>Ox Liver - R35</h2>
-            </a>
-        </div>
-        <a class="prev" onclick="plusSlides(-1, 'ko-dijon')">&#10094;</a>
-        <a class="next" onclick="plusSlides(1, 'ko-dijon')">&#10095;</a>
     </div>
 
-    <!-- Thandy's Kitchen Store Slides -->
-    <div id="thandys-kitchen" class="slideshow-container store-content" style="display:none;">
-        <div class="product mySlides">
-            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Pork">
-                <h2>Pork - R140</h2>
-            </a>
-        </div>
-        <div class="product mySlides">
-            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Small Chips">
-                <h2>Small Chips - R15</h2>
-            </a>
-        </div>
-        <div class="product mySlides">
-            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Large Chips">
-                <h2>Large Chips - R30</h2>
-            </a>
-        </div>
-        <a class="prev" onclick="plusSlides(-1, 'thandys-kitchen')">&#10094;</a>
-        <a class="next" onclick="plusSlides(1, 'thandys-kitchen')">&#10095;</a>
-    </div>
+    <!-- ADD MORE KITCHENS HERE LATER (COPY-PASTE ABOVE DIV) -->
 
-    <br>
     <footer>
         <p>&copy; 2025 SetsingEscrow</p>
     </footer>
 
     <script>
-        // Store switching logic
-        function openStore(storeId) {
-            const stores = document.getElementsByClassName("store-content");
-            for (let i = 0; i < stores.length; i++) {
-                stores[i].style.display = "none";
-            }
-            document.getElementById(storeId).style.display = "block";
+        // Initialize all slideshows
+        document.querySelectorAll('.slideshow-container').forEach(container => {
+            showSlides(1, container);
+        });
 
-            // Update active tab
-            const tabs = document.getElementsByClassName("store-tab");
-            for (let i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove("active");
-            }
-            event.currentTarget.classList.add("active");
-
-            // Reset slides for the new store
-            currentSlide = 1;
-            showSlides(currentSlide, storeId);
+        function plusSlides(n, container) {
+            showSlides(getCurrentSlide(container) + n, container);
         }
 
-        // Slideshow logic (per store)
-        let currentSlide = 1;
-
-        function plusSlides(n, storeId) {
-            showSlides(currentSlide += n, storeId);
-        }
-
-        function showSlides(n, storeId) {
-            const slides = document.querySelectorAll(`#${storeId} .mySlides`);
-            if (n > slides.length) { currentSlide = 1 }
-            if (n < 1) { currentSlide = slides.length }
+        function getCurrentSlide(container) {
+            const slides = container.querySelectorAll('.mySlides');
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+                if (slides[i].style.display === 'block') {
+                    return i + 1;
+                }
             }
-            slides[currentSlide - 1].style.display = "block";
+            return 1;
         }
 
-        // Initialize first store
-        showSlides(currentSlide, "ko-dijon");
+        function showSlides(n, container) {
+            const slides = container.querySelectorAll('.mySlides');
+            if (n > slides.length) { n = 1 }
+            if (n < 1) { n = slides.length }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[n - 1].style.display = 'block';
+        }
     </script>
 </body>
 </html>
