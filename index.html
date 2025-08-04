@@ -3,199 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastFoods</title>
+    <title>Ko Dijon - Order</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #333;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #800000;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
-            background-color: #800000;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            color: #800000;
-        }
-        .kitchen {
-            margin: 30px auto;
-            max-width: 500px;
-            border: 1px solid #ddd;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
             border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .kitchen h2 {
+        .kitchen-header {
             text-align: center;
-            color: #800000;
+            margin-bottom: 20px;
         }
-        .slideshow-container {
-            position: relative;
-            margin: auto;
-        }
-        .product {
-            display: none;
-            text-align: center;
-        }
-        .product img {
+        .kitchen-header img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            aspect-ratio: 1;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
         }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
+        .kitchen-header h1 {
+            color: #800000;
+            margin-top: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
             font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(0,0,0,0.5);
         }
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-        footer {
-            background-color: #800000;
-            color: #fff;
+        select, input, textarea {
+            width: 100%;
             padding: 10px;
-            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .item-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .item-row select {
+            flex: 3;
+        }
+        .item-row input {
+            flex: 1;
+        }
+        .total-section {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .submit-btn {
+            background-color: #25D366; /* WhatsApp green */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .submit-btn:hover {
+            background-color: #128C7E;
+        }
+        .whatsapp-icon {
+            margin-right: 10px;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        
-        <nav>
-            <ul>
-                <li><a href="https://setsing.vercel.app/">Home</a></li>
-                <li><a href="https://setsing-git-services-setsings-projects.vercel.app/">Services</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <h3 style="text-align: center;">Choose a Kitchen</h3>
-
-    <!-- Ko Dijon Kitchen -->
-    <div class="kitchen">
-        <h2>Ko Dijon</h2>
-        <div class="slideshow-container">
-            <div class="product mySlides">
-                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Beef Stew">
-                    <h3>Beef Stew - R60</h3>
-                </a>
-            </div>
-            <div class="product mySlides">
-                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Grilled Beef">
-                    <h3>Grilled Beef - R50</h3>
-                </a>
-            </div>
-            <div class="product mySlides">
-                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Ox Liver">
-                    <h3>Ox Liver - R35</h3>
-                </a>
-            </div>
-            <a class="prev" onclick="plusSlides(-1, this.parentNode)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, this.parentNode)">&#10095;</a>
+    <div class="container">
+        <div class="kitchen-header">
+            <img src="https://via.placeholder.com/800x300?text=Ko+Dijon+Kitchen" alt="Ko Dijon Kitchen">
+            <h1>Ko Dijon</h1>
         </div>
+
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="customerName">Your Name:</label>
+                <input type="text" id="customerName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customerPhone">Phone Number:</label>
+                <input type="tel" id="customerPhone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="deliveryAddress">Delivery Address (if applicable):</label>
+                <textarea id="deliveryAddress" rows="2"></textarea>
+            </div>
+
+            <h3>Select Your Items:</h3>
+            
+            <!-- Item 1 -->
+            <div class="item-row">
+                <select class="food-item" id="item1" onchange="calculateTotal()">
+                    <option value="0">-- Select item --</option>
+                    <option value="65">Rib burger and Chips - R65</option>
+                    <option value="60">Beef burger and Chips - R60</option>
+                    <option value="75">Beef burger, Chips and wings - R75</option>
+                    <option value="50">Pork shank /pap/rice with two sides - R50</option>
+                    <option value="50">Pork trotters/pap with one side - R50</option>
+                    <option value="50">Dagwood/Chips with Russian - R50</option>
+                    <option value="45">Oxliver, pap with one side - R45</option>
+                    <option value="50">Hloho ya Fariki plate - R50</option>
+                    <option value="60">Quarter leg,vors, pap with two sides - R60</option>
+                    <option value="45">Hloho ya Nku,chakalaka with Pap - R45</option>
+                    <option value="55">Hloho ya Nku,tlhakwana,chakalaka with Pap - R55</option>
+                    <option value="35">Kota R35</option>
+                    <option value="45">Kota R45</option>
+                    <option value="55">Kota R55</option>
+                    <option value="55">Kota Wrap - R55</option>
+                </select>
+                <input type="number" min="1" value="1" class="quantity" id="qty1" onchange="calculateTotal()">
+            </div>
+
+            <!-- Item 2 -->
+            <div class="item-row">
+                <select class="food-item" id="item2" onchange="calculateTotal()">
+                    <option value="0">-- Select item --</option>
+                    <option value="65">Rib burger and Chips - R65</option>
+                    <!-- Same options as above -->
+                </select>
+                <input type="number" min="1" value="1" class="quantity" id="qty2" onchange="calculateTotal()">
+            </div>
+
+            <!-- Item 3 -->
+            <div class="item-row">
+                <select class="food-item" id="item3" onchange="calculateTotal()">
+                    <option value="0">-- Select item --</option>
+                    <option value="65">Rib burger and Chips - R65</option>
+                    <!-- Same options as above -->
+                </select>
+                <input type="number" min="1" value="1" class="quantity" id="qty3" onchange="calculateTotal()">
+            </div>
+
+            <div class="total-section">
+                Total: R<span id="totalAmount">0.00</span>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="submitToWhatsApp()">
+                <span class="whatsapp-icon">📱</span> Send Order via WhatsApp
+            </button>
+        </form>
     </div>
-
-    <!-- Thandy's Kitchen -->
-    <div class="kitchen">
-        <h2>Thandy's Kitchen</h2>
-        <div class="slideshow-container">
-            <div class="product mySlides">
-                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Pork">
-                    <h3>Pork - R140</h3>
-                </a>
-            </div>
-            <div class="product mySlides">
-                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Small Chips">
-                    <h3>Small Chips - R15</h3>
-                </a>
-            </div>
-            <div class="product mySlides">
-                <a href="YOUR_DROPBOX_FORM_LINK_HERE">
-                    <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Large Chips">
-                    <h3>Large Chips - R30</h3>
-                </a>
-            </div>
-            <a class="prev" onclick="plusSlides(-1, this.parentNode)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, this.parentNode)">&#10095;</a>
-        </div>
-    </div>
-
-    <!-- ADD MORE KITCHENS HERE LATER (COPY-PASTE ABOVE DIV) -->
-
-    <footer>
-        <p>&copy; 2025 SetsingEscrow</p>
-    </footer>
 
     <script>
-        // Initialize all slideshows
-        document.querySelectorAll('.slideshow-container').forEach(container => {
-            showSlides(1, container);
-        });
-
-        function plusSlides(n, container) {
-            showSlides(getCurrentSlide(container) + n, container);
-        }
-
-        function getCurrentSlide(container) {
-            const slides = container.querySelectorAll('.mySlides');
-            for (let i = 0; i < slides.length; i++) {
-                if (slides[i].style.display === 'block') {
-                    return i + 1;
+        function calculateTotal() {
+            let total = 0;
+            for (let i = 1; i <= 3; i++) {
+                const item = document.getElementById(`item${i}`);
+                const qty = document.getElementById(`qty${i}`);
+                if (item && qty) {
+                    total += parseFloat(item.value) * parseInt(qty.value);
                 }
             }
-            return 1;
+            document.getElementById('totalAmount').textContent = total.toFixed(2);
         }
 
-        function showSlides(n, container) {
-            const slides = container.querySelectorAll('.mySlides');
-            if (n > slides.length) { n = 1 }
-            if (n < 1) { n = slides.length }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = 'none';
+        function submitToWhatsApp() {
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const address = document.getElementById('deliveryAddress').value;
+            
+            if (!name || !phone) {
+                alert("Please enter your name and phone number");
+                return;
             }
-            slides[n - 1].style.display = 'block';
+
+            let orderItems = [];
+            for (let i = 1; i <= 3; i++) {
+                const item = document.getElementById(`item${i}`);
+                const qty = document.getElementById(`qty${i}`);
+                if (item.value !== "0") {
+                    orderItems.push(`${qty.value}x ${item.options[item.selectedIndex].text}`);
+                }
+            }
+
+            if (orderItems.length === 0) {
+                alert("Please select at least one item");
+                return;
+            }
+
+            const total = document.getElementById('totalAmount').textContent;
+            
+            const message = `*NEW ORDER - Ko Dijon*\n\n` +
+                            `*Name:* ${name}\n` +
+                            `*Phone:* ${phone}\n` +
+                            `*Address:* ${address || 'N/A'}\n\n` +
+                            `*Order:*\n${orderItems.join('\n')}\n\n` +
+                            `*Total:* R${total}\n\n` +
+                            `_Order received via SetsingEscrow_`;
+
+            const whatsappUrl = `https://wa.me/2763336438?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
