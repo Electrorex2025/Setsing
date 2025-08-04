@@ -7,19 +7,19 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff; /* White background */
-            color: #333; /* Dark text color */
+            background-color: #fff;
+            color: #333;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #800000; /* Brown header */
-            color: #fff; /* White text color */
+            background-color: #800000;
+            color: #fff;
             padding: 10px;
             text-align: center;
         }
         nav {
-            background-color: #800000; /* Brown navigation background */
+            background-color: #800000;
             padding: 10px 0;
             text-align: center;
         }
@@ -33,26 +33,42 @@
             margin-right: 20px;
         }
         nav ul li a {
-            color: #fff; /* White link color */
+            color: #fff;
             text-decoration: none;
         }
         nav ul li a:hover {
-            color: #800000; /* Brown hover color */
+            color: #800000;
+        }
+        .store-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .store-tab {
+            padding: 10px 20px;
+            background-color: #800000;
+            color: white;
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+        .store-tab.active {
+            background-color: #600000;
         }
         .slideshow-container {
-            max-width: 500px; /* Set max width for slideshow container */
-            margin: auto; /* Center align the container */
-            position: relative; /* Position relative to contain absolute elements */
+            max-width: 500px;
+            margin: auto;
+            position: relative;
         }
         .product {
-            display: none; /* Hide products by default */
+            display: none;
             text-align: center;
         }
         .product img {
-            width: 100%; /* Set width to 100% */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 10px; /* Add border radius */
-            aspect-ratio: 1; /* Make images square */
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            aspect-ratio: 1;
         }
         .prev, .next {
             cursor: pointer;
@@ -67,6 +83,7 @@
             transition: 0.6s ease;
             border-radius: 0 3px 3px 0;
             user-select: none;
+            background-color: rgba(0,0,0,0.5);
         }
         .next {
             right: 0;
@@ -76,8 +93,8 @@
             background-color: rgba(0,0,0,0.8);
         }
         footer {
-            background-color: #800000; /* Brown footer */
-            color: #fff; /* White text color */
+            background-color: #800000;
+            color: #fff;
             padding: 10px;
             text-align: center;
         }
@@ -93,54 +110,108 @@
             </ul>
         </nav>
     </header>
+
+    <div class="store-tabs">
+        <div class="store-tab active" onclick="openStore('ko-dijon')">Ko Dijon</div>
+        <div class="store-tab" onclick="openStore('thandys-kitchen')">Thandy's Kitchen</div>
+    </div>
+
     <h3>Click Food to Buy</h3>
     <br>
-    <div class="slideshow-container">
+
+    <!-- Ko Dijon Store Slides -->
+    <div id="ko-dijon" class="slideshow-container store-content" style="display:block;">
         <div class="product mySlides">
-            <a href="https://www.facebook.com/profile.php?id=61551124214020">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Food Item 1">
-                <h2>Delicious Skhambane</h2>
+            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Beef Stew">
+                <h2>Beef Stew - R60</h2>
             </a>
         </div>
         <div class="product mySlides">
-            <a href="https://www.facebook.com/profile.php?id=61551124214020">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Food Item 2">
-                <h2>Beef Burger and Chips</h2>
+            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Grilled Beef">
+                <h2>Grilled Beef - R50</h2>
             </a>
         </div>
         <div class="product mySlides">
-            <a href="https://www.facebook.com/profile.php?id=61551124214020">
-                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Food Item 3">
-                <h2>Dagwood and Chips</h2>
+            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Ox Liver">
+                <h2>Ox Liver - R35</h2>
             </a>
         </div>
-        <!-- Navigation arrows -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <a class="prev" onclick="plusSlides(-1, 'ko-dijon')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'ko-dijon')">&#10095;</a>
     </div>
+
+    <!-- Thandy's Kitchen Store Slides -->
+    <div id="thandys-kitchen" class="slideshow-container store-content" style="display:none;">
+        <div class="product mySlides">
+            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/SkhambaneEsw.png?raw=true" alt="Pork">
+                <h2>Pork - R140</h2>
+            </a>
+        </div>
+        <div class="product mySlides">
+            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/BeefBurger.jpg?raw=true" alt="Small Chips">
+                <h2>Small Chips - R15</h2>
+            </a>
+        </div>
+        <div class="product mySlides">
+            <a href="YOUR_DROPBOX_FORM_LINK_HERE">
+                <img src="https://github.com/Electrorex2025/Setsing/blob/Pictures/Dagwood.png?raw=true" alt="Large Chips">
+                <h2>Large Chips - R30</h2>
+            </a>
+        </div>
+        <a class="prev" onclick="plusSlides(-1, 'thandys-kitchen')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'thandys-kitchen')">&#10095;</a>
+    </div>
+
     <br>
     <footer>
         <p>&copy; 2025 SetsingEscrow</p>
     </footer>
 
     <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+        // Store switching logic
+        function openStore(storeId) {
+            const stores = document.getElementsByClassName("store-content");
+            for (let i = 0; i < stores.length; i++) {
+                stores[i].style.display = "none";
             }
-            slides[slideIndex-1].style.display = "block";  
+            document.getElementById(storeId).style.display = "block";
+
+            // Update active tab
+            const tabs = document.getElementsByClassName("store-tab");
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            event.currentTarget.classList.add("active");
+
+            // Reset slides for the new store
+            currentSlide = 1;
+            showSlides(currentSlide, storeId);
         }
+
+        // Slideshow logic (per store)
+        let currentSlide = 1;
+
+        function plusSlides(n, storeId) {
+            showSlides(currentSlide += n, storeId);
+        }
+
+        function showSlides(n, storeId) {
+            const slides = document.querySelectorAll(`#${storeId} .mySlides`);
+            if (n > slides.length) { currentSlide = 1 }
+            if (n < 1) { currentSlide = slides.length }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[currentSlide - 1].style.display = "block";
+        }
+
+        // Initialize first store
+        showSlides(currentSlide, "ko-dijon");
     </script>
 </body>
 </html>
