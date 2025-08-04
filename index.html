@@ -33,6 +33,13 @@
             color: #800000;
             margin-top: 10px;
         }
+        .delivery-note {
+            background: #FFF8E1;
+            padding: 10px;
+            border-left: 4px solid #FFC107;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
         .form-group {
             margin-bottom: 15px;
         }
@@ -70,7 +77,7 @@
             font-weight: bold;
         }
         .submit-btn {
-            background-color: #25D366; /* WhatsApp green */
+            background-color: #25D366;
             color: white;
             border: none;
             padding: 12px 20px;
@@ -99,20 +106,19 @@
             <h1>Ko Dijon</h1>
         </div>
 
+        <div class="delivery-note">
+            Note: Delivery fees will be calculated by the supplier based on your location.
+        </div>
+
         <form id="orderForm">
             <div class="form-group">
-                <label for="customerName">Your Name:</label>
+                <label for="customerName">Your Name*:</label>
                 <input type="text" id="customerName" required>
             </div>
 
             <div class="form-group">
-                <label for="customerPhone">Phone Number:</label>
-                <input type="tel" id="customerPhone" required>
-            </div>
-
-            <div class="form-group">
-                <label for="deliveryAddress">Delivery Address (if applicable):</label>
-                <textarea id="deliveryAddress" rows="2"></textarea>
+                <label for="deliveryAddress">Delivery Address*:</label>
+                <textarea id="deliveryAddress" rows="3" required></textarea>
             </div>
 
             <h3>Select Your Items:</h3>
@@ -161,7 +167,7 @@
             </div>
 
             <div class="total-section">
-                Total: R<span id="totalAmount">0.00</span>
+                Total: R<span id="totalAmount">0.00</span> (excluding delivery)
             </div>
 
             <button type="button" class="submit-btn" onclick="submitToWhatsApp()">
@@ -185,11 +191,10 @@
 
         function submitToWhatsApp() {
             const name = document.getElementById('customerName').value;
-            const phone = document.getElementById('customerPhone').value;
             const address = document.getElementById('deliveryAddress').value;
             
-            if (!name || !phone) {
-                alert("Please enter your name and phone number");
+            if (!name || !address) {
+                alert("Please enter your name and delivery address");
                 return;
             }
 
@@ -211,11 +216,10 @@
             
             const message = `*NEW ORDER - Ko Dijon*\n\n` +
                             `*Name:* ${name}\n` +
-                            `*Phone:* ${phone}\n` +
-                            `*Address:* ${address || 'N/A'}\n\n` +
+                            `*Delivery Address:* ${address}\n\n` +
                             `*Order:*\n${orderItems.join('\n')}\n\n` +
-                            `*Total:* R${total}\n\n` +
-                            `_Order received via SetsingEscrow_`;
+                            `*Subtotal:* R${total} (excl. delivery)\n\n` +
+                            `_Note: Delivery fee to be calculated based on location_`;
 
             const whatsappUrl = `https://wa.me/27608708889?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
