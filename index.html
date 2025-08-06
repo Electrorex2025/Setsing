@@ -12,6 +12,7 @@
             padding: 0;
             color: #333;
             line-height: 1.6;
+            background-color: #faf5f0; /* Cream background */
         }
         
         .container {
@@ -21,12 +22,21 @@
             padding: 20px 0;
         }
         
+        /* MAROON COLOR SCHEME */
+        :root {
+            --maroon: #800020;
+            --maroon-light: #a83232;
+            --gold: #D4AF37;
+            --cream: #faf5f0;
+        }
+        
         /* Slideshow Styles */
         .slideshow-container {
             position: relative;
             width: 100%;
             height: 500px;
             overflow: hidden;
+            border-bottom: 5px solid var(--maroon);
         }
         
         .slide {
@@ -47,23 +57,35 @@
             position: absolute;
             bottom: 50px;
             left: 50px;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(128, 0, 32, 0.8); /* Maroon with transparency */
             color: white;
             padding: 20px;
             border-radius: 5px;
             max-width: 500px;
+            border-left: 5px solid var(--gold);
         }
         
         /* Content Sections */
         .section {
             padding: 50px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
         }
         
         .section-title {
-            color: #2a7f2a;
+            color: var(--maroon);
             font-size: 2.2em;
             margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--gold);
         }
         
         /* How It Works */
@@ -80,13 +102,14 @@
             padding: 20px;
             text-align: center;
             margin: 10px;
-            background: #f9f9f9;
+            background: white;
             border-radius: 5px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--maroon);
         }
         
         .step-number {
-            background: #2a7f2a;
+            background: var(--maroon);
             color: white;
             width: 40px;
             height: 40px;
@@ -96,6 +119,7 @@
             justify-content: center;
             margin: 0 auto 15px;
             font-weight: bold;
+            border: 2px solid var(--gold);
         }
         
         /* Benefits */
@@ -110,8 +134,9 @@
             min-width: 250px;
             margin-bottom: 20px;
             padding: 15px;
-            background: #f0f8f0;
-            border-left: 4px solid #2a7f2a;
+            background: white;
+            border-left: 4px solid var(--maroon);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
         /* CTA Buttons */
@@ -132,24 +157,33 @@
         }
         
         .btn-primary {
-            background: #2a7f2a;
+            background: var(--maroon);
             color: white;
+            border: 2px solid var(--maroon);
         }
         
         .btn-secondary {
-            background: #f0f0f0;
-            color: #2a7f2a;
-            border: 1px solid #2a7f2a;
+            background: transparent;
+            color: var(--maroon);
+            border: 2px solid var(--maroon);
         }
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            background: var(--maroon-light);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(128, 0, 32, 0.1);
         }
         
         /* Footer */
         footer {
-            background: #2a7f2a;
+            background: var(--maroon);
             color: white;
             padding: 30px 0;
             text-align: center;
@@ -164,6 +198,25 @@
         
         .trust-item {
             margin: 10px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+        
+        /* Setsing Signature Elements */
+        .setsing-badge {
+            background: var(--gold);
+            color: var(--maroon);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .highlight {
+            color: var(--maroon);
+            font-weight: bold;
         }
         
         @media (max-width: 768px) {
@@ -175,6 +228,7 @@
                 left: 20px;
                 bottom: 20px;
                 max-width: 80%;
+                padding: 10px;
             }
             
             .steps, .benefits {
@@ -183,6 +237,11 @@
             
             .step, .benefit {
                 margin-bottom: 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -220,9 +279,10 @@
     <div class="container">
         <!-- Introduction Section -->
         <section class="section">
+            <span class="setsing-badge">COMMUNITY POWERED</span>
             <h1 class="section-title">Setsing Escrow Stock Boosting Program</h1>
-            <h2>Invest in Local Growth. Earn Monthly Returns.</h2>
-            <p>A <strong>community investment model</strong> where you fund inventory for vetted Setsing businesses. When they sell, you profit.</p>
+            <h2>Invest in Local Growth. <span class="highlight">Earn Monthly Returns.</span></h2>
+            <p>A <strong>community investment model</strong> where you fund inventory for vetted Setsing businesses. When they sell, <strong>you profit</strong>.</p>
         </section>
 
         <!-- Why Trust Section -->
@@ -284,10 +344,10 @@
                 </div>
             </div>
             
-            <h3 style="margin-top: 30px;">📈 Sample Returns:</h3>
+            <h3 style="margin-top: 30px; color: var(--maroon);">📈 Sample Returns:</h3>
             <ul>
-                <li><strong>Electronics:</strong> 8-12% monthly</li>
-                <li><strong>Groceries:</strong> 5-9% monthly</li>
+                <li><strong>Electronics:</strong> <span class="highlight">8-12% monthly</span></li>
+                <li><strong>Groceries:</strong> <span class="highlight">5-9% monthly</span></li>
             </ul>
         </section>
 
@@ -311,6 +371,7 @@
                 <div class="trust-item">FSCA-compliant escrow</div>
                 <div class="trust-item">Featured in Local Media</div>
             </div>
+            <p style="margin-top: 30px;">© 2023 Setsing Escrow. All rights reserved.</p>
         </div>
     </footer>
 
