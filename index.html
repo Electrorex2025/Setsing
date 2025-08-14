@@ -82,18 +82,22 @@
             max-width: 600px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        #date-picker {
+        .date-input {
             width: 100%;
             padding: 12px;
-            margin: 15px 0;
+            margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 4px;
+            box-sizing: border-box;
         }
         #estimated-cost {
             font-size: 1.5rem;
             color: var(--maroon);
             font-weight: bold;
             margin: 20px 0;
+            padding: 10px;
+            background-color: rgba(128, 0, 32, 0.1);
+            border-radius: 4px;
         }
         .btn {
             background: var(--maroon);
@@ -152,7 +156,7 @@
         </div>
 
         <h2>🔒 HOW IT WORKS</h2>
-        <p>1. <strong>Book Dates</strong> → 2. <strong>Pick Agent</strong> → 3. <strong>Pay Securely</strong> → 4. <strong>Get Peace of Mind</strong></p>
+        <p>1. <strong>Book Dates</strong> → 2. <strong>Enter Your Details</strong> → 3. <strong>Pay Securely</strong> → 4. <strong>Get Peace of Mind</strong></p>
 
         <h2>💰 TRANSPARENT PRICING</h2>
         <div class="pricing-table">
@@ -174,21 +178,24 @@
         </div>
 
         <div class="booking-widget">
-            <h2>📅 START YOUR BOOKING</h2>
-            <p>"Leaving soon? Enter your dates below"</p>
+            <h2>📅 BOOK YOUR HOME GUARD</h2>
+            <p>"Select your departure and return dates"</p>
             
-            <label for="date-picker">Select Dates:</label>
-            <input type="text" id="date-picker" placeholder="Click to select dates" readonly>
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" class="date-input" required>
+            
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date" class="date-input" required>
             
             <div id="estimated-cost">Estimated Cost: R0</div>
             
-            <button class="btn" id="check-agents">CHECK AVAILABLE AGENTS</button>
+            <button class="btn" id="book-now">BOOK NOW</button>
         </div>
 
         <h2>✅ WHY CHOOSE US?</h2>
         <ul>
             <li><strong>Verified Locals</strong>: All guards from your neighborhood</li>
-            <li><strong>Setsing Escrow</strong>: Pay only when agent is confirmed</li>
+            <li><strong>Setsing Escrow</strong>: Pay only when service is confirmed</li>
             <li><strong>Daily Updates</strong>: WhatsApp photos of your property</li>
         </ul>
         <p><em>"Over 200 homes guarded in 2023 with 0 burglaries!"</em></p>
@@ -207,40 +214,70 @@
         
         setInterval(nextSlide, 3000);
 
-        // Date picker and price calculator
+        // Date calculation
         document.addEventListener('DOMContentLoaded', function() {
-            const datePicker = document.getElementById('date-picker');
+            const startDateInput = document.getElementById('start-date');
+            const endDateInput = document.getElementById('end-date');
             const estimatedCost = document.getElementById('estimated-cost');
+            const bookNowBtn = document.getElementById('book-now');
             
-            // Initialize date picker (you'll need to include a date picker library for full functionality)
-            datePicker.addEventListener('focus', function() {
-                // In production, replace with a proper date picker library
-                alert("In production, this would show a date range picker");
-                this.value = "2023-11-01 to 2023-11-07"; // Example value
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            startDateInput.min = today;
+            endDateInput.min = today;
+            
+            // Update end date min when start date changes
+            startDateInput.addEventListener('change', function() {
+                endDateInput.min = this.value;
                 calculateCost();
             });
             
+            endDateInput.addEventListener('change', calculateCost);
+            
             function calculateCost() {
-                // Example calculation - replace with real logic
-                const days = 7; // Normally would calculate from selected dates
+                if (!startDateInput.value || !endDateInput.value) return;
+                
+                const startDate = new Date(startDateInput.value);
+                const endDate = new Date(endDateInput.value);
+                
+                // Calculate difference in days
+                const diffTime = endDate - startDate;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1; // Inclusive
+                
                 let cost = 0;
                 
-                if (days <= 6) {
-                    cost = days * 69;
-                } else if (days <= 29) {
-                    const weeks = Math.ceil(days / 7);
+                if (diffDays <= 6) {
+                    cost = diffDays * 69;
+                } else if (diffDays <= 29) {
+                    const weeks = Math.ceil(diffDays / 7);
                     cost = weeks * 396;
                 } else {
-                    const months = Math.ceil(days / 30);
+                    const months = Math.ceil(diffDays / 30);
                     cost = months * 999;
                 }
                 
                 estimatedCost.textContent = `Estimated Cost: R${cost}`;
             }
             
-            // Check agents button
-            document.getElementById('check-agents').addEventListener('click', function() {
-                alert("In production, this would redirect to agent selection page");
+            // Book Now button
+            bookNowBtn.addEventListener('click', function() {
+                if (!startDateInput.value || !endDateInput.value) {
+                    alert("Please select both dates");
+                    return;
+                }
+                
+                // Prepare data for next page
+                const startDate = startDateInput.value;
+                const endDate = endDateInput.value;
+                const days = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24)) + 1;
+                
+                let cost = 0;
+                if (days <= 6) cost = days * 69;
+                else if (days <= 29) cost = Math.ceil(days / 7) * 396;
+                else cost = Math.ceil(days / 30) * 999;
+                
+                // Redirect to booking form with parameters
+                window.location.href = `booking-form.html?start=${startDate}&end=${endDate}&cost=${cost}`;
             });
         });
     </script>
