@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Boosting for Businesses | Setsing Escrow</title>
+    <style>
+        /* (Reuse all CSS styles from the original page) */
+    </style>
+</head>
+<body>
+    <!-- Slideshow Header -->
+    <div class="slideshow-container">
+        <div class="slide active" style="background-image: url('https://github.com/Electrorex2025/Setsing/blob/Pictures/Setsingic.jpg?raw=true');">
+            <div class="slide-caption">
+                <h2>Grow Your Inventory</h2>
+                <p>Get R10,000+ in stock with flexible repayment</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://github.com/Electrorex2025/Setsing/blob/Pictures/Setsingic2.jpg?raw=true');">
+            <div class="slide-caption">
+                <h2>No Collateral Needed</h2>
+                <p>Repay only when you sell</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://github.com/Electrorex2025/Setsing/blob/Pictures/Setsingic3.jpg?raw=true');">
+            <div class="slide-caption">
+                <h2>Community-Backed</h2>
+                <p>Local investors fund your growth</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction Section -->
+        <section class="section">
+            <span class="setsing-badge">FOR EXISTING BUSINESSES</span>
+            <h1 class="section-title">Stock Boosting for QwaQwa Businesses</h1>
+            <h2>Get <span class="highlight">R10,000 to R50,000</span> in Stock. <br>Repay Flexibly Based on Sales.</h2>
+            <p><strong>Already running a business?</strong> Our program provides inventory funding with no fixed monthly payments. You repay <strong>only when you sell</strong>.</p>
+        </section>
+
+        <!-- Why Apply Section -->
+        <section class="section">
+            <h2 class="section-title">Why Apply?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <h3>🛒 Immediate Stock</h3>
+                    <p>Fill your shelves without upfront costs</p>
+                </div>
+                <div class="benefit">
+                    <h3>📈 Sales-Based Repayment</h3>
+                    <p>No fixed installments – repay as you earn</p>
+                </div>
+                <div class="benefit">
+                    <h3>🔍 Vetted Investors</h3>
+                    <p>Community backers who believe in local growth</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>YOU APPLY</h3>
+                    <p>Submit your business docs (3 months' statements, CIPC registration)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>WE VERIFY</h3>
+                    <p>Setsing visits your premises and reviews your sales history</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>GET STOCK</h3>
+                    <p>Receive inventory within 72 hours of approval</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eligibility Section -->
+        <section class="section">
+            <h2 class="section-title">Who Qualifies?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <h3>✅ Registered Business</h3>
+                    <p>CIPC certificate required</p>
+                </div>
+                <div class="benefit">
+                    <h3>🏪 Physical Location</h3>
+                    <p>Must operate in QwaQwa</p>
+                </div>
+                <div class="benefit">
+                    <h3>💵 Sales History</h3>
+                    <p>3+ months of bank statements</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px; color: var(--maroon);">📝 Required Documents:</h3>
+            <ul>
+                <li>CIPC registration</li>
+                <li>3 months' bank statements</li>
+                <li>Proof of business address</li>
+                <li>ID copy of owner</li>
+            </ul>
+        </section>
+
+        <!-- Repayment Section -->
+        <section class="section">
+            <h2 class="section-title">Flexible Repayment</h2>
+            <p>Repay <strong>5-10% of daily sales</strong> until the boosted amount + 15% profit share is settled.</p>
+            <div class="benefits" style="margin-top: 20px;">
+                <div class="benefit">
+                    <h3>Example:</h3>
+                    <p><strong>R10,000 boost</strong><br>
+                    Sell R1,000/day?<br>
+                    Repay <span class="highlight">R50-100/day</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section" style="text-align: center;">
+            <h2 class="section-title">Ready to Grow?</h2>
+            <div class="cta-buttons">
+                <a href="https://setsing.shop/apply-business/" class="btn btn-primary">Apply Now</a>
+                <a href="#" class="btn btn-secondary">Download FAQ</a>
+            </div>
+            <p style="margin-top: 20px;">📞 Need help? Call +27 87 510 5077</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Supported by the QwaQwa Community</h3>
+            <div class="trust-signals">
+                <div class="trust-item">50+ businesses funded</div>
+                <div class="trust-item">No hidden fees</div>
+                <div class="trust-item">Setsing Escrow Protected</div>
+            </div>
+            <p style="margin-top: 30px;">© 2025 Setsing Escrow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Slideshow Script -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>
