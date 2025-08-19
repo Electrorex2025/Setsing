@@ -3,166 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Boosting for Businesses | Setsing Escrow</title>
+    <title>Stock Boost for Small Businesses | Setsing Escrow</title>
     <style>
-        /* (Reuse all CSS styles from the original page) */
+        /* Modern Afro-Centric Color Scheme */
+        :root {
+            --primary: #8B322C; /* Rich terracotta */
+            --secondary: #E2C275; /* Warm gold */
+            --accent: #478C5C; /* Earthy green */
+            --light: #F8F1E5; /* Cream */
+            --dark: #1E1E1E; /* Dark text */
+        }
+        
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Header */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-icon {
+            background: var(--primary);
+            color: white;
+            font-size: 2rem;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        /* Form */
+        .form-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--accent);
+        }
+        
+        /* Testimonials */
+        .testimonial {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Slideshow Header -->
-    <div class="slideshow-container">
-        <div class="slide active" style="background-image: url('https://github.com/Electrorex2025/Setsing/blob/Pictures/Setsingic.jpg?raw=true');">
-            <div class="slide-caption">
-                <h2>Grow Your Inventory</h2>
-                <p>Get R10,000+ in stock with flexible repayment</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Get R1,000 to R10,000 in Stock for Your Business</h1>
+            <p>Flexible funding for South African small businesses. No complex paperwork. Repay as you sell.</p>
+            <a href="#apply" class="btn">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How Stock Boosting Works</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>1. Simple Application</h3>
+                        <p>Tell us about your business (no bank statements or CIPC needed)</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>2. Quick Approval</h3>
+                        <p>We verify your business location and operations</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>3. Receive Stock</h3>
+                        <p>Get R1,000-R10,000 worth of inventory within 48 hours</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>4. Flexible Repayment</h3>
+                        <p>Pay back 10% of daily sales until amount + 15% profit share is settled</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="slide" style="background-image: url('https://github.com/Electrorex2025/Setsing/blob/Pictures/Setsingic2.jpg?raw=true');">
-            <div class="slide-caption">
-                <h2>No Collateral Needed</h2>
-                <p>Repay only when you sell</p>
-            </div>
-        </div>
-        <div class="slide" style="background-image: url('https://github.com/Electrorex2025/Setsing/blob/Pictures/Setsingic3.jpg?raw=true');">
-            <div class="slide-caption">
-                <h2>Community-Backed</h2>
-                <p>Local investors fund your growth</p>
-            </div>
-        </div>
-    </div>
+    </section>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Introduction Section -->
-        <section class="section">
-            <span class="setsing-badge">FOR EXISTING BUSINESSES</span>
-            <h1 class="section-title">Stock Boosting for QwaQwa Businesses</h1>
-            <h2>Get <span class="highlight">R10,000 to R50,000</span> in Stock. <br>Repay Flexibly Based on Sales.</h2>
-            <p><strong>Already running a business?</strong> Our program provides inventory funding with no fixed monthly payments. You repay <strong>only when you sell</strong>.</p>
-        </section>
-
-        <!-- Why Apply Section -->
-        <section class="section">
-            <h2 class="section-title">Why Apply?</h2>
-            <div class="benefits">
-                <div class="benefit">
-                    <h3>🛒 Immediate Stock</h3>
-                    <p>Fill your shelves without upfront costs</p>
+    <!-- Who Qualifies -->
+    <section class="section" style="background: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title">Who Can Apply?</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-check" style="color: var(--accent);"></i> Any South African Business</h3>
+                        <p>From spaza shops to street vendors</p>
+                    </div>
                 </div>
-                <div class="benefit">
-                    <h3>📈 Sales-Based Repayment</h3>
-                    <p>No fixed installments – repay as you earn</p>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-check" style="color: var(--accent);"></i> No Documents Needed</h3>
+                        <p>Just proof your business is operating</p>
+                    </div>
                 </div>
-                <div class="benefit">
-                    <h3>🔍 Vetted Investors</h3>
-                    <p>Community backers who believe in local growth</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section class="section">
-            <h2 class="section-title">How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>YOU APPLY</h3>
-                    <p>Submit your business docs (3 months' statements, CIPC registration)</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>WE VERIFY</h3>
-                    <p>Setsing visits your premises and reviews your sales history</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>GET STOCK</h3>
-                    <p>Receive inventory within 72 hours of approval</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Eligibility Section -->
-        <section class="section">
-            <h2 class="section-title">Who Qualifies?</h2>
-            <div class="benefits">
-                <div class="benefit">
-                    <h3>✅ Registered Business</h3>
-                    <p>CIPC certificate required</p>
-                </div>
-                <div class="benefit">
-                    <h3>🏪 Physical Location</h3>
-                    <p>Must operate in QwaQwa</p>
-                </div>
-                <div class="benefit">
-                    <h3>💵 Sales History</h3>
-                    <p>3+ months of bank statements</p>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-check" style="color: var(--accent);"></i> Flexible Requirements</h3>
+                        <p>No minimum sales history</p>
+                    </div>
                 </div>
             </div>
             
-            <h3 style="margin-top: 30px; color: var(--maroon);">📝 Required Documents:</h3>
-            <ul>
-                <li>CIPC registration</li>
-                <li>3 months' bank statements</li>
-                <li>Proof of business address</li>
-                <li>ID copy of owner</li>
-            </ul>
-        </section>
+            <div class="testimonial">
+                <p>"I got R5,000 stock for my hair salon in Soweto. Now I repay only when clients come!"</p>
+                <p><strong>- Thandi, Salon Owner</strong></p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Repayment Section -->
-        <section class="section">
-            <h2 class="section-title">Flexible Repayment</h2>
-            <p>Repay <strong>5-10% of daily sales</strong> until the boosted amount + 15% profit share is settled.</p>
-            <div class="benefits" style="margin-top: 20px;">
-                <div class="benefit">
-                    <h3>Example:</h3>
-                    <p><strong>R10,000 boost</strong><br>
-                    Sell R1,000/day?<br>
-                    Repay <span class="highlight">R50-100/day</span></p>
+    <!-- Application Form -->
+    <section id="apply" class="section">
+        <div class="container">
+            <h2 class="section-title">Apply in 5 Minutes</h2>
+            <div class="form-container">
+                <form id="stockBoostForm">
+                    <div class="form-group">
+                        <label for="name">Your Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">WhatsApp Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Business Location (Town/City)</label>
+                        <input type="text" id="location" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Street Address or Landmark</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="type">Business Type</label>
+                        <select id="type" required>
+                            <option value="">Select...</option>
+                            <option value="food">Food/Grocery</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="beauty">Beauty/Hair</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount">How Much Stock Do You Need?</label>
+                        <select id="amount" required>
+                            <option value="">Select...</option>
+                            <option value="1000">R1,000</option>
+                            <option value="3000">R3,000</option>
+                            <option value="5000">R5,000</option>
+                            <option value="10000">R10,000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="proof">How Can We Verify Your Business? (e.g., photos, social media page)</label>
+                        <textarea id="proof" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title">Common Questions</h2>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>How quickly will I get the stock?</h3>
+                    <p>Approved applications receive stock within 48 hours in major areas.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="section" style="text-align: center;">
-            <h2 class="section-title">Ready to Grow?</h2>
-            <div class="cta-buttons">
-                <a href="https://setsing.shop/apply-business/" class="btn btn-primary">Apply Now</a>
-                <a href="#" class="btn btn-secondary">Download FAQ</a>
+            
+            <div class="card" style="margin-top: 20px;">
+                <div class="card-content">
+                    <h3>What if my business is mobile?</h3>
+                    <p>We support street vendors and mobile businesses too. Just provide your regular operating locations.</p>
+                </div>
             </div>
-            <p style="margin-top: 20px;">📞 Need help? Call +27 87 510 5077</p>
-        </section>
-    </div>
+            
+            <div class="card" style="margin-top: 20px;">
+                <div class="card-content">
+                    <h3>Is there any collateral needed?</h3>
+                    <p>No collateral required. We trust our community members.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <h3>Supported by the QwaQwa Community</h3>
-            <div class="trust-signals">
-                <div class="trust-item">50+ businesses funded</div>
-                <div class="trust-item">No hidden fees</div>
-                <div class="trust-item">Setsing Escrow Protected</div>
+            <h3>Setsing Escrow Stock Boost</h3>
+            <p>Community-powered business growth</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <p style="margin-top: 30px;">© 2025 Setsing Escrow. All rights reserved.</p>
+            
+            <p>© 2025 Setsing Escrow. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Slideshow Script -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
+        // Form submission
+        document.getElementById('stockBoostForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                business: document.getElementById('business').value,
+                location: document.getElementById('location').value,
+                address: document.getElementById('address').value,
+                type: document.getElementById('type').value,
+                amount: document.getElementById('amount').value,
+                proof: document.getElementById('proof').value
+            };
+            
+            // Here you would typically send to server
+            console.log('Application submitted:', formData);
+            
+            // Show success message
+            alert('Application received! We\'ll contact you via WhatsApp within 24 hours.');
+            this.reset();
+        });
         
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-        
-        setInterval(nextSlide, 3000);
+        // Simple form validation
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                if (input.required && !input.value) {
+                    input.style.borderColor = 'red';
+                } else {
+                    input.style.borderColor = '#ddd';
+                }
+            });
+        });
     </script>
 </body>
 </html>
