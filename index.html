@@ -1,235 +1,694 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Improved charset declaration -->
-    <meta charset="UTF-8">
-    
-    <!-- Enhanced viewport for mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- SEO Meta Tags -->
-    <title>Setsing Escrow </title>
-    <meta name="description" content="Trusted escrow services and entertainment in Qwaqwa">
-    <meta name="keywords" content="escrow, marketplace, secure payments, Qwaqwa, games">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-    <!-- CSS Variables for theming -->
-    <style>
-        :root {
-            --primary: #800000;
-            --secondary: #000000;
-            --text-light: #ffffff;
-            --hover-opacity: 0.8;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--secondary);
-            color: var(--text-light);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--primary);
-            color: var(--text-light);
-            padding: 15px 10px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        nav {
-            background-color: var(--primary);
-            padding: 12px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-        
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: bold;
-            transition: opacity 0.3s;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-        
-        nav ul li a:hover {
-            opacity: var(--hover-opacity);
-            background-color: rgba(255,255,255,0.1);
-        }
-        
-        .main-content {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            min-height: calc(100vh - 200px);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        .image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .marketplace-image, .game-image {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            border: 3px solid var(--primary);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-        }
-        
-        .marketplace-image:hover, .game-image:hover {
-            transform: scale(1.02);
-        }
-        
-        .image-label {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--text-light);
-        }
-        
-        .social-links {
-            text-align: center;
-            margin: 30px 0;
-            grid-column: span 2;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            margin: 0 15px;
-            transition: transform 0.3s;
-        }
-        
-        .social-links a:hover {
-            transform: scale(1.1);
-        }
-        
-        .social-links img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-        }
-        
-        footer {
-            background-color: var(--primary);
-            color: var(--text-light);
-            padding: 15px 10px;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .social-links {
-                grid-column: span 1;
-            }
-        }
-    </style>
-    
-    <!-- Preload important resources -->
-    <link rel="preload" href="Maluti-Cresent-Capture.webp" as="image">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Setsing Escrow | Choose Business</title>
+  <!-- Google Fonts fallback: Segoe UI is system-based, but we add a clean sans as backup -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #FAF5F0;  /* Cream */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333333;
+      line-height: 1.5;
+    }
+
+    /* container & utility */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* header & navigation */
+    .site-header {
+      background-color: #FAF5F0;
+      padding: 20px 0;
+      border-bottom: 2px solid #D4AF37; /* gold accent line */
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo h1 {
+      font-size: 2rem;   /* close to 2.5rem but balanced for nav */
+      font-weight: bold;
+      color: #800020;    /* maroon */
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #D4AF37;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: #800020;
+      font-weight: 500;
+      border-left: 3px solid #D4AF37;
+      padding-left: 12px;
+    }
+
+    .nav-links a {
+      color: #333333;
+      text-decoration: none;
+      margin-left: 28px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #800020;
+      border-bottom: 2px solid #D4AF37;
+      padding-bottom: 4px;
+    }
+
+    /* hero slideshow (compact version to keep style guide) */
+    .hero-slideshow {
+      margin: 30px 0 40px 0;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .slideshow-container {
+      position: relative;
+      height: 380px;
+      background-color: #2c2c2c;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide-caption {
+      background: rgba(128, 0, 32, 0.75); /* maroon overlay */
+      padding: 20px 30px;
+      max-width: 480px;
+      margin-left: 40px;
+      border-left: 5px solid #D4AF37;
+      border-radius: 0 12px 12px 0;
+      backdrop-filter: blur(2px);
+    }
+
+    .slide-caption h3 {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .slide-caption p {
+      color: #f5e6d3;
+      font-size: 1rem;
+    }
+
+    /* section titles with gold underline */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #800020;
+      text-align: center;
+      margin-bottom: 45px;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #D4AF37;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* business grid - card system */
+    .business-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 40px 0 60px;
+    }
+
+    .business-card {
+      background: #FFFFFF;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+      border: 1px solid rgba(128, 0, 32, 0.1);
+    }
+
+    .business-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px rgba(128, 0, 32, 0.12);
+      border-color: #D4AF37;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background-color: #f0ede8;
+      transition: transform 0.3s;
+    }
+
+    .business-card:hover .card-img {
+      transform: scale(1.02);
+    }
+
+    .card-content {
+      padding: 20px 18px 24px;
+      text-align: center;
+    }
+
+    .business-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #800020;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .business-desc {
+      font-size: 0.9rem;
+      color: #5a5a5a;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .booking-badge {
+      display: inline-block;
+      background: #D4AF37;
+      color: #800020;
+      font-weight: bold;
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: 30px;
+      letter-spacing: 0.5px;
+    }
+
+    /* "why choose us" mini section to keep style consistent */
+    .trust-row {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 35px 25px;
+      margin: 30px 0 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border-top: 3px solid #D4AF37;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .trust-item {
+      flex: 1;
+      text-align: center;
+      font-weight: 600;
+      color: #800020;
+      font-size: 1rem;
+    }
+
+    .trust-item span {
+      display: block;
+      font-size: 0.85rem;
+      color: #333;
+      font-weight: normal;
+      margin-top: 6px;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: #800020;
+      border-radius: 20px;
+      padding: 45px 30px;
+      text-align: center;
+      margin: 30px 0 50px;
+      color: white;
+    }
+
+    .cta-section h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      max-width: 550px;
+      margin: 0 auto 25px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: #800020;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #a83232;
+      transform: scale(0.98);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid #D4AF37;
+      padding: 10px 26px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background: #D4AF37;
+      color: #800020;
+      border-color: #D4AF37;
+    }
+
+    /* footer maroon background */
+    .site-footer {
+      background-color: #800020;
+      color: white;
+      padding: 45px 0 30px;
+      margin-top: 40px;
+      border-top: 4px solid #D4AF37;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-brand p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .trust-badges {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-left: 2px solid #D4AF37;
+    }
+
+    .footer-copyright {
+      text-align: center;
+      margin-top: 35px;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding-top: 20px;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .slideshow-container {
+        height: 280px;
+      }
+      .slide-caption {
+        margin-left: 20px;
+        padding: 12px 20px;
+        max-width: 85%;
+      }
+      .slide-caption h3 {
+        font-size: 1.3rem;
+      }
+      .business-grid {
+        gap: 20px;
+      }
+      .btn-group .btn-primary, .btn-group .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+      .trust-row {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-links a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+      }
+      .header-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 16px;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .card-content {
+        padding: 16px;
+      }
+      .business-name {
+        font-size: 1.4rem;
+      }
+      .cta-section h3 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Semantic header with proper heading hierarchy -->
 
-    
-    <!-- Improved navigation with aria-label -->
-    <nav aria-label="Main navigation">
-        <ul>
-            <li><a href="https://setsing-git-services-setsings-projects.vercel.app" aria-label="Our Services">Services</a></li>
-            <li><a href="https://setsing-git-store-setsings-projects.vercel.app" aria-label="Online Store">Buy Online</a></li>
-            
-        </ul>
-    </nav>
-    
-    <!-- Main content section with proper semantic markup -->
-    <main class="main-content">
-        <!-- Marketplace Image -->
-        <div class="image-container">
-            <a href="https://www.facebook.com/groups/2369041193369822">
-                <img src="Maluti-Cresent-Capture.webp" 
-                     alt="Setsing Escrow Marketplace at Maluti Crescent" 
-                     class="marketplace-image"
-                     width="400"
-                     height="300">
-            </a>
-            <span class="image-label">Setsing Escrow</span>
-        </div>
-        
-        <!-- Game Image -->
+<header class="site-header">
+  <div class="container header-flex">
+    <div class="logo">
+      <h1>Setsing<span>Escrow</span></h1>
+      <div class="tagline">Secure • Community Powered • FSCA Compliant</div>
+    </div>
+    <div class="nav-links">
+      <a href="#">Dashboard</a>
+      <a href="#">How It Works</a>
+      <a href="#">Support</a>
+    </div>
+  </div>
+</header>
 
-        <p>🤝Your reliable provider in the deals.</br>🤝 Where buying items is easier </br> and trust is always first.💯</p>
-        
-        <!-- Social links with proper spacing and semantics -->
-        <div class="social-links">
-            <a href="https://www.instagram.com/setsingescrow/" aria-label="Instagram">
-                <img src="https://github.com/Electrorex2025/Electrorex/blob/Pictures/instagram-icon-971.jpg?raw=true" 
-                     alt="Instagram" 
-                     width="48" 
-                     height="48"
-                     loading="lazy">
-            </a>
-            <a href="https://www.facebook.com/setsingescrow" aria-label="Facebook">
-                <img src="https://github.com/Electrorex2025/Electrorex/blob/Pictures/facebook-logo-png-4.png?raw=true" 
-                     alt="Facebook" 
-                     width="48" 
-                     height="48"
-                     loading="lazy">
-            </a>
-        </div>
-    </main>
+<!-- Hero slideshow (maroon/gold captions, auto-rotating) -->
+<div class="container hero-slideshow">
+  <div class="slideshow-container" id="slideshowRoot">
+    <div class="slide active" style="background-image: url('https://picsum.photos/id/104/1600/500?grayscale');">
+      <div class="slide-caption">
+        <h3>Protected Payments</h3>
+        <p>Your funds held in secure escrow until satisfaction</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('https://picsum.photos/id/20/1600/500');">
+      <div class="slide-caption">
+        <h3>Trusted by 500+ Investors</h3>
+        <p>Community-driven escrow for local businesses</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('https://picsum.photos/id/30/1600/500');">
+      <div class="slide-caption">
+        <h3>Seamless Bookings</h3>
+        <p>Select a business, view pricing, and reserve with confidence</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  <!-- section title with gold underline -->
+  <div style="text-align: center;">
+    <h2 class="section-title">Choose a Business to Book</h2>
+  </div>
+  <p style="text-align: center; margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; color: #555;">
+    Browse local vendors and service providers. Click on any business card to see their price list and start your escrow-protected booking.
+  </p>
+
+  <!-- GRID VIEW: dynamic business cards (easily extendable) -->
+  <div class="business-grid" id="businessGrid">
+    <!-- business cards will be injected via JS, but we also prefill with sample data for flexibility.
+         The structure allows future additions by just modifying the businesses array -->
+  </div>
+
+  <!-- why choose us / trust row -->
+  <div class="trust-row">
+    <div class="trust-item">🏦 FSCA-compliant escrow <span>Regulated & secure</span></div>
+    <div class="trust-item">🤝 500+ investors since 2023 <span>Thriving community</span></div>
+    <div class="trust-item">⭐ Featured in Local Media <span>Trusted platform</span></div>
+    <div class="trust-item">🛡️ Zero-release guarantee <span>Funds protected</span></div>
+  </div>
+
+  <!-- CTA section -->
+  <div class="cta-section">
+    <h3>Ready to secure your next booking?</h3>
+    <p>Join the Setsing Escrow community today and pay with confidence. Every transaction is protected by our smart escrow contract.</p>
+    <div class="btn-group">
+      <a href="#" class="btn-primary">Join Program</a>
+      <a href="#" class="btn-secondary">Watch Tutorial</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Setsing Escrow</p>
+        <div style="font-size: 0.85rem; opacity: 0.8;">Secure payments • Peace of mind</div>
+      </div>
+      <div class="trust-badges">
+        <div class="badge">🏆 500+ investors since 2023</div>
+        <div class="badge">⚖️ FSCA-compliant escrow</div>
+        <div class="badge">📰 Featured in Local Media</div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      © 2025 Setsing Escrow — Community powered escrow solutions. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ----- BUSINESS DATA (easily extendable array) -----
+  // For each business we define: name, description, imageUrl, priceListLink (where user gets redirected)
+  // The price list pages are dummy for now, but you can later replace with actual booking forms.
+  const businesses = [
+    {
+      id: 1,
+      name: "Heritage Construction",
+      description: "General contracting & renovations. Quality guaranteed with escrow protection.",
+      imageUrl: "https://picsum.photos/id/15/400/300",
+      priceListLink: "price-heritage.html"   // demo redirection, could be any relative or absolute url
+    },
+    {
+      id: 2,
+      name: "Golden Spoon Catering",
+      description: "Exquisite event catering, private dinners & corporate buffets.",
+      imageUrl: "https://picsum.photos/id/127/400/300",
+      priceListLink: "price-catering.html"
+    },
+    {
+      id: 3,
+      name: "Velocity Auto Care",
+      description: "Professional detailing, repairs & performance tuning. Secure escrow payments.",
+      imageUrl: "https://picsum.photos/id/111/400/300",
+      priceListLink: "price-autocare.html"
+    },
+    {
+      id: 4,
+      name: "Tshepo Fashion House",
+      description: "Custom tailoring, bridal wear & corporate outfits. Book a consultation.",
+      imageUrl: "https://picsum.photos/id/26/400/300",
+      priceListLink: "price-fashion.html"
+    },
+    {
+      id: 5,
+      name: "GreenLeaf Landscaping",
+      description: "Garden design, maintenance & eco-friendly outdoor transformations.",
+      imageUrl: "https://picsum.photos/id/29/400/300",
+      priceListLink: "price-landscaping.html"
+    },
+    {
+      id: 6,
+      name: "Digital Orbit IT Solutions",
+      description: "Web development, IT support & cybersecurity escrow-ready plans.",
+      imageUrl: "https://picsum.photos/id/0/400/300",
+      priceListLink: "price-it.html"
+    }
+  ];
+
+  // function to render grid dynamically -> easy to add more businesses later
+  function renderBusinessGrid() {
+    const gridContainer = document.getElementById('businessGrid');
+    if (!gridContainer) return;
     
-    <!-- Footer with copyright and year update -->
-    <footer>
-        <p>&copy; <span id="current-year">2025</span> Setsing Escrow. All rights reserved.</p>
-    </footer>
-    
-    <!-- Small JS for dynamic year and analytics -->
-    <script>
-        // Auto-update copyright year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Simple analytics (replace with your actual GA code)
-        window.addEventListener('load', function() {
-            console.log('Page loaded - Analytics would fire here');
+    let cardsHtml = '';
+    for (let biz of businesses) {
+      cardsHtml += `
+        <a href="${biz.priceListLink}" class="business-card" target="_blank" rel="noopener noreferrer">
+          <img class="card-img" src="${biz.imageUrl}" alt="${biz.name}" loading="lazy">
+          <div class="card-content">
+            <div class="business-name">${escapeHtml(biz.name)}</div>
+            <div class="business-desc">${escapeHtml(biz.description)}</div>
+            <div class="booking-badge">VIEW PRICE LIST →</div>
+          </div>
+        </a>
+      `;
+    }
+    gridContainer.innerHTML = cardsHtml;
+  }
+
+  // simple XSS protection
+  function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+      return c;
+    });
+  }
+
+  // ---------- AUTO SLIDESHOW (maroon overlay, gold border, smooth rotation) ----------
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  let slideInterval;
+
+  function showSlide(index) {
+    if (!slides.length) return;
+    // normalize index
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+    slideIndex = index;
+  }
+
+  function nextSlide() {
+    let newIndex = slideIndex + 1;
+    if (newIndex >= slides.length) newIndex = 0;
+    showSlide(newIndex);
+  }
+
+  function startSlideshow() {
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+  }
+
+  // initialize slideshow and pause on hover (nice UX)
+  function initSlideshow() {
+    if (slides.length) {
+      showSlide(0);
+      startSlideshow();
+      const container = document.querySelector('.slideshow-container');
+      if (container) {
+        container.addEventListener('mouseenter', () => {
+          if (slideInterval) clearInterval(slideInterval);
         });
-    </script>
+        container.addEventListener('mouseleave', () => {
+          startSlideshow();
+        });
+      }
+    }
+  }
+
+  // Optional: placeholder handling for price list links: if in a real environment we want to ensure
+  // that clicking business card actually shows the price list page. But for demonstration we just open dummy links.
+  // Since the requirement says: "When they click the image, the link will redirect to the specific business price list"
+  // We implemented using <a> tag around each card, with priceListLink.
+
+  // In order to make it production-like, we also add a friendly console log for future expansion
+  function extendBusiness(newBusiness) {
+    // usage: extendBusiness({ name: "New Co", description: "...", imageUrl: "...", priceListLink: "..." });
+    businesses.push(newBusiness);
+    renderBusinessGrid();  // re-render grid after addition
+    console.log('Business added, grid updated!');
+  }
+
+  // For demonstration, expose extendBusiness to window so you can add more businesses in console if needed
+  window.extendBusinessGrid = extendBusiness;
+  
+  // Additional note: style fully matches Setsing Escrow guidelines: maroon (#800020), gold (#D4AF37), cream background,
+  // white cards, shadow, border radius, buttons maroon, gold underline, responsive grid.
+  // Also trust badges, footer maroon background with gold accents, etc.
+  
+  // run render on load
+  document.addEventListener('DOMContentLoaded', () => {
+    renderBusinessGrid();
+    initSlideshow();
+    
+    // optional smooth scroll for any anchor
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+    allLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').substring(1);
+        if (targetId && document.getElementById(targetId)) {
+          e.preventDefault();
+          document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
